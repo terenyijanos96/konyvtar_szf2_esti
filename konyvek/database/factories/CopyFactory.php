@@ -19,8 +19,11 @@ class CopyFactory extends Factory
     public function definition(): array
     {
         return [
-            'book_id' => Book::random()->user_id,
-            'user_id' => User::random()->book_id,
+            'hardcovered' => rand(0,1),
+            'book_id' => Book::all()->random()->book_id,
+            'publication'=>fake()->year(),
+            'status'=> rand(0,2)
+            
         ];
     }
 }
