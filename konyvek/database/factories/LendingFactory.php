@@ -2,6 +2,10 @@
 
 namespace Database\Factories;
 
+use App\Models\Book;
+use App\Models\Copy;
+use App\Models\Lending;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,7 +21,9 @@ class LendingFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'user_id' => User::all()->random()->id,
+            'copy_id' => Copy::all()->random()->copy_id,
+            'start'=> fake()->date()
         ];
     }
 }
